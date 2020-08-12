@@ -7,10 +7,12 @@ import {DataService} from './data.service';
 import {HttpClientModule} from '@angular/common/http';
 import {from} from 'rxjs';
 import { NavbarComponent } from './navbar/navbar.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
