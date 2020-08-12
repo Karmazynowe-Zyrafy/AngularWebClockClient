@@ -1,0 +1,40 @@
+.NavBar{
+  display: flex;
+  flex-direction: row;
+  background: #315F42;
+}
+img{
+  display: flex;
+  max-width: 100%;
+  max-height: 100%;
+}
+.navbar-item{
+  display: flex;
+  max-width: 250px;
+}
+.navigation {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+
+  list-style: none;
+  margin: 0;
+  background: #315F42;
+}
+
+.navigation a {
+  text-decoration: none;
+  display: grid;
+  padding: 2em;
+  color: white;
+}
+
+.navigation a:hover {
+  background: #5F314E;
+}
+
+@media all and (max-width: 800px) {
+  .navigation {
+    justify-content: space-around;
+  }
+}

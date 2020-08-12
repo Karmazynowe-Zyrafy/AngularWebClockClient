@@ -7,16 +7,16 @@ import {Clock} from './clock.model';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements  /*OnInit,*/ DoCheck {
+export class AppComponent /*implements  OnInit, DoCheck*/ {
   clock$: Clock;
   constructor( private  dataService: DataService) {}
 
-  ngDoCheck() {
-
-    console.log('test1' + this.dataService.getClock()) ;
-
-    return this.dataService.getClock().subscribe(data => this.clock$ = data);
-  }
+  // ngDoCheck() {
+  //
+  //   console.log('test1' + this.dataService.getClock()) ;
+  //
+  //   return this.dataService.getClock().subscribe(data => this.clock$ = data);
+  // }
  /* ngOnInit() {
 
     console.log('test1' + this.dataService.getClock()) ;
