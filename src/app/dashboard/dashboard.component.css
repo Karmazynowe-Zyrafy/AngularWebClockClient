@@ -1,0 +1,36 @@
+  .flex-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(265px, 1fr)); /* Where the magic happens */
+    grid-auto-rows: 94px;
+    grid-gap: 20px;
+    margin: 20px;
+  }
+  
+  .balance {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #DEDEDE;
+    border-radius: 15px;
+  }
+
+  .startRegistration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #DEDEDE;
+    border-radius: 15px;
+  }
+
+  .stopRegistration {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #DEDEDE;
+    border-radius: 15px;
+  }
