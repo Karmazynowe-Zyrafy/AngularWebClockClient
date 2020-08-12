@@ -1,40 +1,128 @@
+:root{
+  font-size: 16px;
+  text-align:center;
+}
+
 .NavBar{
-  display: flex;
+
+  height: 6rem;
+  width: 100vw;
+  position: fixed;
   flex-direction: row;
-  background: #315F42;
+  background-color: #315F42;
+  justify-content: flex-start;
+  transition: height 250ms ease;
+
+}
+
+.NavBar:hover{
+  height: 10rem;
+
+
+}
+
+.NavBar:hover .link-text{
+  display: flex;
+  flex-direction: column;
+
+
 }
 img{
   display: flex;
-  max-width: 100%;
-  max-height: 100%;
-}
-.navbar-item{
-  display: flex;
-  max-width: 250px;
-}
-.navigation {
-  display: flex;
-  flex-flow: row wrap;
   justify-content: flex-start;
 
-  list-style: none;
+}
+
+.nav-link i{
+
+  min-width: 2rem;
+  align-content: center;
+  align-items: center;
+  margin-left: 2rem;
+}
+.navbar-item li:hover{
+
+}
+.nav-link span{
+  margin-right: 4rem;
+}
+.nav-link {
+  text-align: center;
+align-content: center;
+  align-items: center;
+  height: 4rem;
+  text-decoration: none;
+  justify-content: center;
+display: flex;
+
+}
+.link-text{
+
+align-items: center;
+  display: none;
+  margin-top: 10rem;
+
+}
+.navbar-item{
+align-content: center;
+height: 100%;
+font-size:20px;
+}
+
+.navbar-item:last-child{
+  margin-left: auto;
+}
+.navigation {
+  font-family:Lato;
   margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  list-style: none;
   background: #315F42;
+  height: 6em;
+  text-align: center;
+
 }
 
 .navigation a {
   text-decoration: none;
-  display: grid;
-  padding: 2em;
+  padding: 1em;
   color: white;
+  display: flex;
+  align-items: center;
 }
+
 
 .navigation a:hover {
   background: #5F314E;
+
 }
 
-@media all and (max-width: 800px) {
-  .navigation {
-    justify-content: space-around;
+
+body{
+  color: black;
+  background-color: white;
+  margin: 0;
+  padding:0;
+}
+main {
+  margin-top: 6rem;
+  padding:1rem ;
+}
+@media only screen and (min-width: 600px) {
+  .NavBar {
+    height: 6rem;
+    width: 100vw;
   }
 }
+@media only screen and (max-width: 600px)
+{
+  .NavBar {
+    bottom: 0;
+    width: 100vw;
+    height: 4rem;
+  }
+
+}
+
