@@ -4,14 +4,9 @@
 </head>
 <nav class="NavBar">
     <ul class="navigation">
-        <li class="navbar-item"><a class="nav-link" href="#"><i class="material-icons">home</i><span
-                class="link-text"> Strona Główna</span></a></li>
-        <li class="navbar-item"><a class="nav-link" href="#"><i class="material-icons">calendar_today</i><span
-                class="link-text">Historia</span></a></li>
-        <li class="navbar-item"><a class="nav-link" href="#"><i class="material-icons">contact_support</i><span
+        <li class="navbar-item" *ngFor="let element of this.navbarArry"><a class="nav-link" href='{{element.icon}}'><i
+                class="material-icons">{{element.icon}}</i><span
                 class="link-text">Informacje</span></a></li>
-        <li class="navbar-item"><a class="nav-link" href="#"><i class="material-icons">power_settings_new</i><span
-                class="link-text">Wyloguj</span></a></li>
     </ul>
 </nav>
 
