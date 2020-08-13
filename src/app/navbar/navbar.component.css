@@ -1,128 +1,122 @@
-:root{
-  font-size: 16px;
-  text-align:center;
+.NavBar {
+
+    height: 6rem;
+    width: 100vw;
+    position: fixed;
+    flex-direction: row;
+    background-color: #315F42;
+    justify-content: flex-start;
+    transition: height 250ms ease;
 }
 
-.NavBar{
-
-  height: 6rem;
-  width: 100vw;
-  position: fixed;
-  flex-direction: row;
-  background-color: #315F42;
-  justify-content: flex-start;
-  transition: height 250ms ease;
-
+.NavBar:hover {
+    height: 10rem;
 }
 
-.NavBar:hover{
-  height: 10rem;
-
-
+.NavBar:hover .link-text {
+    display: flex;
+    flex-direction: column;
 }
 
-.NavBar:hover .link-text{
-  display: flex;
-  flex-direction: column;
-
-
-}
-img{
-  display: flex;
-  justify-content: flex-start;
-
+img {
+    display: flex;
+    justify-content: flex-start;
 }
 
-.nav-link i{
+.nav-link i {
 
-  min-width: 2rem;
-  align-content: center;
-  align-items: center;
-  margin-left: 2rem;
+    min-width: 2rem;
+    align-content: center;
+    align-items: center;
+    margin-left: 2rem;
 }
-.navbar-item li:hover{
 
+
+.nav-link span {
+    margin-right: 4rem;
 }
-.nav-link span{
-  margin-right: 4rem;
-}
+
 .nav-link {
-  text-align: center;
-align-content: center;
-  align-items: center;
-  height: 4rem;
-  text-decoration: none;
-  justify-content: center;
-display: flex;
-
-}
-.link-text{
-
-align-items: center;
-  display: none;
-  margin-top: 10rem;
-
-}
-.navbar-item{
-align-content: center;
-height: 100%;
-font-size:20px;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    height: 4rem;
+    text-decoration: none;
+    justify-content: center;
+    display: flex;
 }
 
-.navbar-item:last-child{
-  margin-left: auto;
+.material-icons {
+    font-size: 70px;
 }
+
+.link-text {
+
+    align-items: center;
+    display: none;
+    margin-top: 10rem;
+}
+
+.navbar-item {
+    align-content: center;
+    height: 100%;
+    font-size: 20px;
+}
+
+.navbar-item:last-child {
+    margin-left: auto;
+}
+
 .navigation {
-  font-family:Lato;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  list-style: none;
-  background: #315F42;
-  height: 6em;
-  text-align: center;
-
+    font-family: Lato;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    background: #315F42;
+    height: 6rem;
+    text-align: center;
 }
 
 .navigation a {
-  text-decoration: none;
-  padding: 1em;
-  color: white;
-  display: flex;
-  align-items: center;
+    text-decoration: none;
+    padding: 1rem;
+    color: white;
+    display: flex;
+    align-items: center;
 }
 
 
 .navigation a:hover {
-  background: #5F314E;
-
+    background: #5F314E;
 }
 
 
-body{
-  color: black;
-  background-color: white;
-  margin: 0;
-  padding:0;
+body {
+    color: black;
+    background-color: white;
+    margin: 0;
+    padding: 0;
 }
+
 main {
-  margin-top: 6rem;
-  padding:1rem ;
+    margin-top: 6rem;
+    padding: 1rem;
 }
-@media only screen and (min-width: 600px) {
-  .NavBar {
-    height: 6rem;
-    width: 100vw;
-  }
-}
-@media only screen and (max-width: 600px)
-{
-  .NavBar {
-    bottom: 0;
-    width: 100vw;
-    height: 4rem;
-  }
 
+@media only screen and (min-width: 600px) {
+    .NavBar {
+        height: 6rem;
+        width: 100vw;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .NavBar {
+        bottom: 0;
+        width: 100vw;
+        height: 4rem;
+    }
 }
 

@@ -1,9 +1,10 @@
 .container {
 
 }
-.bar{
+:host{
   display: flex;
   flex-direction:column;
   flex-grow: 2;
   background: cadetblue;
 }
+
