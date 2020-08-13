@@ -7,11 +7,11 @@ import {Component, OnInit} from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
     logo;
-    navbarArry;
+    navbarArray;
 
     constructor() {
         this.logo = 'assets/imags/rekordlogo.png';
-        this.navbarArry = [
+        this.navbarArray = [
             {
                 link: '#',
                 icon: 'home',
