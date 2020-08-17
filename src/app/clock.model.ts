@@ -1,6 +1,6 @@
 export class Clock {
-    Hour: number;
-    Minute: number;
-    Second: number;
+    hour: number;
+    minute: number;
+    second: number;
 
 }
