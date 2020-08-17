@@ -1,6 +1,6 @@
-import {DataService} from './data.service';
+import {ClockDataService} from './clock-data.service';
 describe('DataService', () => {
-    let service: DataService;
+    let service: ClockDataService;
 
     beforeEach(() => {});
 

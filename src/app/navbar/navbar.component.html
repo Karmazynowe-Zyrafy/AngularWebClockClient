@@ -1,12 +1,15 @@
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <nav class="navbar">
     <ul class="navigation">
-        <li class="navbar-item" *ngFor="let element of this.navbarArray"><a class="nav-link" href='{{element.icon}}'><i
-                class="material-icons">{{element.icon}}</i><span
-                class="link-text">{{element.text}}</span></a></li>
+        <li id="navbar-item" *ngFor="let element of this.navbarArray" class="navbar-item">
+            <a class="nav-link" href='{{element.icon}}'>
+                <i class="material-icons">{{element.icon}}</i>
+                <span  id="link-text" class="link-text">{{element.text}}</span>
+            </a>
+        </li>
     </ul>
 </nav>
 

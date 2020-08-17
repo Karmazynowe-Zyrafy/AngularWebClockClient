@@ -4,5 +4,5 @@ import {Clock} from './clock.model';
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
+export class ClockDataService {
 }

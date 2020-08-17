@@ -1,9 +1,10 @@
-:host{
+:host {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     flex-grow: 2;
     background: cadetblue;
 }
+
 img {
     display: flex;
     justify-content: flex-start;
@@ -45,17 +46,25 @@ img {
 }
 
 .navbar-item {
+    width: 8rem;
     height: 100%;
     align-content: center;
+    font-size: 1.25rem;
+}
 
-    font-size: 20px;
+i {
+    margin: 0;
+}
+
+.navbar-item:hover {
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
     transition: width 250ms ease;
 }
 
-.navbar-item:hover .link-text {
-    width: 10rem;
-    display: flex;
-    flex-direction: column;
+#navbar-item:hover #link-text {
+    display: unset;
 }
 
 .navbar-item:last-child {
@@ -66,7 +75,6 @@ img {
     min-width: 2rem;
     align-content: center;
     align-items: center;
-    margin-left: 2rem;
 
 }
 
@@ -88,18 +96,19 @@ img {
 }
 
 .material-icons {
+    margin: 0;
     font-size: 70px;
 }
 
 @media only screen and (min-width: 600px) {
-    .NavBar {
+    .navbar {
         height: 6rem;
         width: 100vw;
     }
 }
 
 @media only screen and (max-width: 600px) {
-    .NavBar {
+    .navbar {
         bottom: 0;
         width: 100vw;
         height: 4rem;

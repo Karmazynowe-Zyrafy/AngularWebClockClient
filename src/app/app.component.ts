@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {DataService} from './data.service';
+import {ClockDataService} from './clock-data.service';
 import {Clock} from './clock.model';
 
 @Component({
@@ -8,6 +8,6 @@ import {Clock} from './clock.model';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    constructor(private  dataService: DataService) {
+    constructor(private  dataService: ClockDataService) {
     }
 }
