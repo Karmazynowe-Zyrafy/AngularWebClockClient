@@ -8,6 +8,6 @@ import {Clock} from './clock.model';
     styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-    constructor(private  dataService: ClockDataService) {
+    constructor(private  ClockService: ClockDataService) {
     }
 }
