@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {Navbar} from './dtos';
 
 @Component({
     selector: 'app-navbar',
@@ -7,7 +8,7 @@ import {Component} from '@angular/core';
 })
 export class NavbarComponent {
     logo: string;
-    navBarArray: ({ link: string; icon: string; text: string })[];
+    navBarArray: Navbar[];
 
     constructor() {
         this.logo = 'assets/imags/rekordlogo.png';
