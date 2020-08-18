@@ -7,11 +7,11 @@ import {Component} from '@angular/core';
 })
 export class NavbarComponent {
     logo: string;
-    navbarArray;
+    navBarArray: ({ link: string; icon: string; text: string })[];
 
     constructor() {
         this.logo = 'assets/imags/rekordlogo.png';
-        this.navbarArray = [
+        this.navBarArray = [
             {
                 link: '#',
                 icon: 'home',
