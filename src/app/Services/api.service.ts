@@ -1,21 +1,18 @@
 import {Injectable} from '@angular/core';
+import {HttpClient, HttpResponse} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {catchError} from 'rxjs/operators';
-import {HttpClient} from '@angular/common/http';
-
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root',
 })
-    export class ApiService {
-    constructor(private http: HttpClient) {}
-    clockInUrl = 'https://localhost:44385/api/ClockInOut/ClockIn/';
-    id = 6;
+export class ApiService {
+  constructor(private http: HttpClient) {}
 
-    public PostClockIn(): void {
-        console.log('services');
-        this.http.post(this.clockInUrl + this.id, null).subscribe(res => console.log(res));
-        }
-
-
+  clockInUrl = 'https://localhost:44385/api/ClockInOut/ClockIndad/';
+  id = 6;
+  public PostClockIn(): Observable<HttpResponse<Response>> {
+    return this.http.post<Response>(this.clockInUrl + this.id, null, {
+      observe: 'response',
+    });
+  }
 }
