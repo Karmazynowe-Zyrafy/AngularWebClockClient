@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ApiService} from '../Services/api.service';
-
+import { ApiService } from '../Services/api.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,9 +7,8 @@ import {ApiService} from '../Services/api.service';
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent {
-  constructor(private apiService: ApiService) {
-  }
-  ClockIn(): void{
+  constructor(private apiService: ApiService) {}
+  ClockIn(): void {
     console.log('przycisk');
     this.apiService.PostClockIn();
   }
