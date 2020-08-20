@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { ApiService } from '../Services/api.service';
+import {Component} from '@angular/core';
+import {ApiService} from '../Services/api.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,13 +8,13 @@ import { ApiService } from '../Services/api.service';
 })
 export class DashboardComponent {
   constructor(private apiService: ApiService) {}
-  ClockIn(): void {
-    this.apiService.PostClockIn().subscribe((response) => {
+  clockIn(): void {
+    this.apiService.postClockIn().subscribe((response) => {
       console.log(response);
     });
   }
-  ClockOut(): void {
-    this.apiService.PostClockOut().subscribe((response) => {
+  clockOut(): void {
+    this.apiService.postClockOut().subscribe((response) => {
       console.log(response);
     });
   }
