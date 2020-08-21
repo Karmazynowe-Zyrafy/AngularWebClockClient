@@ -1,16 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../Services/api.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { BalanceDto } from '../balanceDto';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
   constructor(private apiService: ApiService) {}
+
   errorClockIn: number = null;
   errorClockOut: number = null;
+  balanceData: BalanceDto;
+
   clockIn(): void {
     this.apiService.postClockIn().subscribe(
       (response) => {
@@ -31,5 +35,12 @@ export class DashboardComponent {
         this.errorClockOut = error.status;
       }
     );
+  }
+
+  ngOnInit() {
+    console.log('test1' + this.apiService.getBalance());
+    return this.apiService
+      .getBalance()
+      .subscribe((data) => (this.balanceData = data));
   }
 }
