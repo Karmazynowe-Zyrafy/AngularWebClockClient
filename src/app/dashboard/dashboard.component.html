@@ -24,12 +24,22 @@
       <i class="material-icons">access_time</i>
     </button>
     <ng-container
-      *ngIf="errorClockIn === null; else afterClockInErrorClick"
+      *ngIf="errorClockIn !== 404 || errorClockIn !== 200; else okClockInClik"
     ></ng-container>
-    <ng-template #afterClockInErrorClick>
-      <p>Nie zarejestrować wejścia do pracy Error: {{ errorClockIn }}</p>
+
+    <ng-container *ngIf="errorClockIn === 404">
+      <p>
+        Nie zarejestrować wejścia do pracy Error: {{ errorClockIn }}
+      </p></ng-container
+    >
+
+    <ng-template #okClockInClik>
+      <p>Udało się pomyślnie zarejestrować wejście do pracy</p>
     </ng-template>
+
+    <ng-template #errorClockInClick> </ng-template>
   </div>
+
   <div class="stop-registration">
     <div>Zakończ rejetrowanie pracy</div>
     <button (click)="clockOut()" class="clock-out-button">

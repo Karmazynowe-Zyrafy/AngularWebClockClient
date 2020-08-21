@@ -18,7 +18,7 @@ export class ApiService {
     this.balanceUrl = 'https://localhost:44385/api/ClockInOut/Balance/';
     this.BalanceToThisDayUrl =
       'https://localhost:44385/api/ClockInOut/BalanceToThisDay/';
-    this.id = 1;
+    this.id = 6;
   }
 
   public postClockIn(): Observable<HttpResponse<Response>> {
@@ -32,7 +32,7 @@ export class ApiService {
     });
   }
   getBalance(): Observable<BalanceDto> {
-    //  return this.http.get<BalanceDto>(this.balanceUrl + this.id);
-    return this.http.get<BalanceDto>(this.BalanceToThisDayUrl + this.id);
+    // return this.http.get<BalanceDto>(this.balanceUrl + this.id);
+    return this.http.get<BalanceDto>(this.BalanceToThisDayUrl + 1);
   }
 }
