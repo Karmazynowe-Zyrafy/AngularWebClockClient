@@ -1,5 +1,6 @@
-import {Component} from '@angular/core';
-import {ApiService} from '../Services/api.service';
+import { Component } from '@angular/core';
+import { ApiService } from '../Services/api.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,14 +9,27 @@ import {ApiService} from '../Services/api.service';
 })
 export class DashboardComponent {
   constructor(private apiService: ApiService) {}
+  errorClockIn: number = null;
+  errorClockOut: number = null;
   clockIn(): void {
-    this.apiService.postClockIn().subscribe((response) => {
-      console.log(response);
-    });
+    this.apiService.postClockIn().subscribe(
+      (response) => {
+        console.log(response);
+      },
+      (error: HttpErrorResponse) => {
+        this.errorClockIn = error.status;
+      }
+    );
   }
+
   clockOut(): void {
-    this.apiService.postClockOut().subscribe((response) => {
-      console.log(response);
-    });
+    this.apiService.postClockOut().subscribe(
+      (response) => {
+        console.log(response);
+      },
+      (error: HttpErrorResponse) => {
+        this.errorClockOut = error.status;
+      }
+    );
   }
 }
