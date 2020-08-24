@@ -11,14 +11,15 @@ import { BalanceDto } from '../balanceDto';
 export class DashboardComponent implements OnInit {
   constructor(private apiService: ApiService) {}
 
-  errorClockIn: number = null;
-  errorClockOut: number = null;
+  errorClockIn: number;
+  errorClockOut: number;
   balanceData: BalanceDto;
 
   clockIn(): void {
     this.apiService.postClockIn().subscribe(
       (response) => {
         console.log(response);
+        this.errorClockIn = response.status;
       },
       (error: HttpErrorResponse) => {
         this.errorClockIn = error.status;
@@ -30,6 +31,7 @@ export class DashboardComponent implements OnInit {
     this.apiService.postClockOut().subscribe(
       (response) => {
         console.log(response);
+        this.errorClockOut = response.status;
       },
       (error: HttpErrorResponse) => {
         this.errorClockOut = error.status;

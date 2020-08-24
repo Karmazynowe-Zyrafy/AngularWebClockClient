@@ -23,21 +23,15 @@
     <button (click)="clockIn()" class="clock-in-button">
       <i class="material-icons">access_time</i>
     </button>
-    <ng-container
-      *ngIf="errorClockIn !== 404 || errorClockIn !== 200; else okClockInClik"
-    ></ng-container>
 
-    <ng-container *ngIf="errorClockIn === 404">
-      <p>
-        Nie zarejestrować wejścia do pracy Error: {{ errorClockIn }}
-      </p></ng-container
-    >
+    <p *ngIf="errorClockIn === 404">
+      Wystąpił błąd Error: {{ errorClockIn }} nie udało się zarejestrować
+      wejścia do pracy
+    </p>
 
-    <ng-template #okClockInClik>
-      <p>Udało się pomyślnie zarejestrować wejście do pracy</p>
-    </ng-template>
-
-    <ng-template #errorClockInClick> </ng-template>
+    <p *ngIf="errorClockIn === 200">
+      Udało się pomyślnie zarejestrować wejście do pracy
+    </p>
   </div>
 
   <div class="stop-registration">
@@ -45,11 +39,13 @@
     <button (click)="clockOut()" class="clock-out-button">
       <i class="material-icons">access_time</i>
     </button>
-    <ng-container
-      *ngIf="errorClockOut === null; else afterClockOutErrorClick"
-    ></ng-container>
-    <ng-template #afterClockOutErrorClick>
-      <p>Nie zarejestrować wyjścia z pracy Error: {{ errorClockOut }}</p>
-    </ng-template>
+    <p *ngIf="errorClockOut === 404">
+      Wystąpił błąd Error: {{ errorClockIn }} nie udało się zarejestrować
+      wyjścia z pracy
+    </p>
+
+    <p *ngIf="errorClockOut === 200">
+      Udało się pomyślnie zarejestrować wyjście z pracy
+    </p>
   </div>
 </div>

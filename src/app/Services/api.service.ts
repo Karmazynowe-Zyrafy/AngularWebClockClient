@@ -7,19 +7,13 @@ import { BalanceDto } from '../balanceDto';
   providedIn: 'root',
 })
 export class ApiService {
-  id: number;
-  clockInUrl: string;
-  clockOutUrl: string;
-  balanceUrl: string;
-  BalanceToThisDayUrl: string;
-  constructor(private http: HttpClient) {
-    this.clockInUrl = 'https://localhost:44385/api/ClockInOut/ClockIn/';
-    this.clockOutUrl = 'https://localhost:44385/api/ClockInOut/ClockOut/';
-    this.balanceUrl = 'https://localhost:44385/api/ClockInOut/Balance/';
-    this.BalanceToThisDayUrl =
-      'https://localhost:44385/api/ClockInOut/BalanceToThisDay/';
-    this.id = 6;
-  }
+  id = 6;
+  clockInUrl = 'https://localhost:44385/api/ClockInOut/ClockIn/';
+  clockOutUrl = 'https://localhost:44385/api/ClockInOut/ClockOut/';
+  balanceUrl = 'https://localhost:44385/api/ClockInOut/Balance/';
+  BalanceToThisDayUrl =
+    'https://localhost:44385/api/ClockInOut/BalanceToThisDay/';
+  constructor(private http: HttpClient) {}
 
   public postClockIn(): Observable<HttpResponse<Response>> {
     return this.http.post<Response>(this.clockInUrl + this.id, null, {
