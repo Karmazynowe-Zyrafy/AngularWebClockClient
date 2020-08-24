@@ -24,7 +24,11 @@
       <i class="material-icons">access_time</i>
     </button>
 
-    <p *ngIf="responseStatusClockIn !== 200 && responseStatusClockIn !== null">
+    <p
+      *ngIf="
+        responseStatusClockIn !== 200 && responseStatusClockIn !== undefined
+      "
+    >
       Wystąpił błąd Error: {{ responseStatusClockIn }} nie udało się
       zarejestrować wejścia do pracy
     </p>
@@ -40,7 +44,9 @@
       <i class="material-icons">access_time</i>
     </button>
     <p
-      *ngIf="responseStatusClockOut !== 200 && responseStatusClockOut !== null"
+      *ngIf="
+        responseStatusClockOut !== 200 && responseStatusClockOut !== undefined
+      "
     >
       Wystąpił błąd Error: {{ responseStatusClockIn }} nie udało się
       zarejestrować wyjścia z pracy
