@@ -10,21 +10,46 @@
     <div>
       <app-donut-chart></app-donut-chart>
     </div>
-    <div>info</div>
+    <div>
+      <p>Godziny Przepracowane: {{ balanceData.hoursWorked }}</p>
+      <p>Minuty Przepracowane:{{ balanceData.minutesWorked }}</p>
+      <p>Godziny Do Przepracowania:{{ balanceData.hoursLeft }}</p>
+      <p>Minuty Do Przepracowania:{{ balanceData.minutesLeft }}</p>
+    </div>
   </div>
 </div>
 
 <div class="flex-container">
   <div class="start-registration">
     <div>Rozpocznij rejetrowanie pracy</div>
-    <button class="clock-in-button">
+    <button (click)="clockIn()" class="clock-in-button">
       <i class="material-icons">access_time</i>
     </button>
+
+    <p *ngIf="responseStatusClockIn !== 200 && responseStatusClockIn !== null">
+      Wystąpił błąd Error: {{ responseStatusClockIn }} nie udało się
+      zarejestrować wejścia do pracy
+    </p>
+
+    <p *ngIf="responseStatusClockIn === 200">
+      Udało się pomyślnie zarejestrować wejście do pracy
+    </p>
   </div>
+
   <div class="stop-registration">
     <div>Zakończ rejetrowanie pracy</div>
-    <button class="clock-out-button">
+    <button (click)="clockOut()" class="clock-out-button">
       <i class="material-icons">access_time</i>
     </button>
+    <p
+      *ngIf="responseStatusClockOut !== 200 && responseStatusClockOut !== null"
+    >
+      Wystąpił błąd Error: {{ responseStatusClockIn }} nie udało się
+      zarejestrować wyjścia z pracy
+    </p>
+
+    <p *ngIf="responseStatusClockOut === 200">
+      Udało się pomyślnie zarejestrować wyjście z pracy
+    </p>
   </div>
 </div>
