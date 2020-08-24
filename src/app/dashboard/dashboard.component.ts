@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {ApiService} from '../Services/api.service';
-import {HttpErrorResponse} from '@angular/common/http';
-import {BalanceDto} from '../balanceDto';
+import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../Services/api.service';
+import { HttpErrorResponse } from '@angular/common/http';
+import { BalanceDto } from '../balanceDto';
 
 @Component({
   selector: 'app-dashboard',

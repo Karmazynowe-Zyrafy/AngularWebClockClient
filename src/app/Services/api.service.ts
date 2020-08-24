@@ -7,7 +7,7 @@ import { BalanceDto } from '../balanceDto';
   providedIn: 'root',
 })
 export class ApiService {
-  id = 6;
+  id = 1;
   baseUrl = 'https://localhost:44385/api';
   clockInUrl = this.baseUrl + '/ClockInOut/ClockIn/';
   clockOutUrl = this.baseUrl + '/ClockInOut/ClockOut/';
@@ -26,7 +26,9 @@ export class ApiService {
     });
   }
   getBalance(): Observable<BalanceDto> {
-    // return this.http.get<BalanceDto>(this.balanceUrl + this.id);
-    return this.http.get<BalanceDto>(this.BalanceToThisDayUrl + 1);
+    return this.http.get<BalanceDto>(this.balanceUrl + this.id);
+  }
+  getBalanceToThisDay(): Observable<BalanceDto> {
+    return this.http.get<BalanceDto>(this.BalanceToThisDayUrl + this.id);
   }
 }
