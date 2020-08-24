@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { BalanceDto } from '../balanceDto';
+import { ClockInOutDto } from '../clockInOutDto';
 
 @Injectable({
   providedIn: 'root',
@@ -12,6 +13,7 @@ export class ApiService {
   clockInUrl = this.baseUrl + '/ClockInOut/ClockIn/';
   clockOutUrl = this.baseUrl + '/ClockInOut/ClockOut/';
   balanceUrl = this.baseUrl + '/ClockInOut/Balance/';
+  clockInOutHistory = this.baseUrl + '/ClockInOut/History/';
   BalanceToThisDayUrl = this.baseUrl + '/ClockInOut/BalanceToThisDay/';
   constructor(private http: HttpClient) {}
 
@@ -28,5 +30,8 @@ export class ApiService {
   getBalance(): Observable<BalanceDto> {
     // return this.http.get<BalanceDto>(this.balanceUrl + this.id);
     return this.http.get<BalanceDto>(this.BalanceToThisDayUrl + 1);
+  }
+  getClockInOutHistory(): Observable<ClockInOutDto[]> {
+    return this.http.get<ClockInOutDto[]>(this.clockInOutHistory + 1);
   }
 }
