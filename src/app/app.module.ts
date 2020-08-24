@@ -8,12 +8,14 @@ import {HttpClientModule} from '@angular/common/http';
 import {from} from 'rxjs';
 import {NavbarComponent} from './navbar/navbar.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
+import { DonutChartComponent } from './donut-chart/donut-chart.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         NavbarComponent,
-        DashboardComponent
+        DashboardComponent,
+        DonutChartComponent
     ],
     imports: [
         BrowserModule,
