@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../Services/api.service';
-import { HttpErrorResponse } from '@angular/common/http';
-import { BalanceDto } from '../balanceDto';
+import {Component, OnInit} from '@angular/core';
+import {ApiService} from '../Services/api.service';
+import {HttpErrorResponse} from '@angular/common/http';
+import {BalanceDto} from '../balanceDto';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,18 +11,18 @@ import { BalanceDto } from '../balanceDto';
 export class DashboardComponent implements OnInit {
   constructor(private apiService: ApiService) {}
 
-  errorClockIn: number;
-  errorClockOut: number;
+  responseStatusClockIn: number = null;
+  responseStatusClockOut: number = null;
   balanceData: BalanceDto;
 
   clockIn(): void {
     this.apiService.postClockIn().subscribe(
       (response) => {
         console.log(response);
-        this.errorClockIn = response.status;
+        this.responseStatusClockIn = response.status;
       },
       (error: HttpErrorResponse) => {
-        this.errorClockIn = error.status;
+        this.responseStatusClockIn = error.status;
       }
     );
   }
@@ -31,10 +31,10 @@ export class DashboardComponent implements OnInit {
     this.apiService.postClockOut().subscribe(
       (response) => {
         console.log(response);
-        this.errorClockOut = response.status;
+        this.responseStatusClockOut = response.status;
       },
       (error: HttpErrorResponse) => {
-        this.errorClockOut = error.status;
+        this.responseStatusClockOut = error.status;
       }
     );
   }

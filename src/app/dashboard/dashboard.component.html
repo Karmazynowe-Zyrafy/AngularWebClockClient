@@ -24,12 +24,12 @@
       <i class="material-icons">access_time</i>
     </button>
 
-    <p *ngIf="errorClockIn === 404">
-      Wystąpił błąd Error: {{ errorClockIn }} nie udało się zarejestrować
-      wejścia do pracy
+    <p *ngIf="responseStatusClockIn !== 200 && responseStatusClockIn !== null">
+      Wystąpił błąd Error: {{ responseStatusClockIn }} nie udało się
+      zarejestrować wejścia do pracy
     </p>
 
-    <p *ngIf="errorClockIn !== 200">
+    <p *ngIf="responseStatusClockIn === 200">
       Udało się pomyślnie zarejestrować wejście do pracy
     </p>
   </div>
@@ -39,12 +39,14 @@
     <button (click)="clockOut()" class="clock-out-button">
       <i class="material-icons">access_time</i>
     </button>
-    <p *ngIf="errorClockOut === 404">
-      Wystąpił błąd Error: {{ errorClockIn }} nie udało się zarejestrować
-      wyjścia z pracy
+    <p
+      *ngIf="responseStatusClockOut !== 200 && responseStatusClockOut !== null"
+    >
+      Wystąpił błąd Error: {{ responseStatusClockIn }} nie udało się
+      zarejestrować wyjścia z pracy
     </p>
 
-    <p *ngIf="errorClockOut !== 200">
+    <p *ngIf="responseStatusClockOut === 200">
       Udało się pomyślnie zarejestrować wyjście z pracy
     </p>
   </div>

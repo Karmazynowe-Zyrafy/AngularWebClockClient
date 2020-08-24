@@ -8,11 +8,11 @@ import { BalanceDto } from '../balanceDto';
 })
 export class ApiService {
   id = 6;
-  clockInUrl = 'https://localhost:44385/api/ClockInOut/ClockIn/';
-  clockOutUrl = 'https://localhost:44385/api/ClockInOut/ClockOut/';
-  balanceUrl = 'https://localhost:44385/api/ClockInOut/Balance/';
-  BalanceToThisDayUrl =
-    'https://localhost:44385/api/ClockInOut/BalanceToThisDay/';
+  baseUrl = 'https://localhost:44385/api';
+  clockInUrl = this.baseUrl + '/ClockInOut/ClockIn/';
+  clockOutUrl = this.baseUrl + '/ClockInOut/ClockOut/';
+  balanceUrl = this.baseUrl + '/ClockInOut/Balance/';
+  BalanceToThisDayUrl = this.baseUrl + '/ClockInOut/BalanceToThisDay/';
   constructor(private http: HttpClient) {}
 
   public postClockIn(): Observable<HttpResponse<Response>> {
