@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {ApiService} from '../Services/api.service';
-import {HttpErrorResponse} from '@angular/common/http';
-import {BalanceDto} from '../balanceDto';
+import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../Services/api.service';
+import { HttpErrorResponse } from '@angular/common/http';
+import { BalanceDto } from '../balanceDto';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,8 +11,8 @@ import {BalanceDto} from '../balanceDto';
 export class DashboardComponent implements OnInit {
   constructor(private apiService: ApiService) {}
 
-  responseStatusClockIn: number = null;
-  responseStatusClockOut: number = null;
+  responseStatusClockIn: number;
+  responseStatusClockOut: number;
   balanceData: BalanceDto;
 
   clockIn(): void {
