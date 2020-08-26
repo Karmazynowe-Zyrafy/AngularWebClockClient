@@ -35,7 +35,7 @@ ul {
 }
 @media (min-width: 768px) {
   li {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
   }
 }
 @media (min-width: 992px) {
