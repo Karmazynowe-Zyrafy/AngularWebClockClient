@@ -1,0 +1,31 @@
+.flex-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-auto-rows: 50rem;
+  grid-gap: 1rem;
+  margin: 1rem;
+  font-family: Lato;
+}
+.history-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #dedede;
+  border-radius: 100rem;
+}
+li {
+  background-color: #b3b1af;
+  font-size: 1.5rem;
+  margin: 0.8125rem;
+  list-style: none;
+  letter-spacing: 0.5rem;
+}
+.odd-li {
+  background-color: #dee3e0;
+}
+ul {
+  margin-left: auto;
+  margin-right: auto;
+  overflow-y: scroll;
+}
