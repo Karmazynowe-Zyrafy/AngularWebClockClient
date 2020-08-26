@@ -4,14 +4,14 @@ svg {
 }
 
 .donut-percent {
-  font-size: 0.5em;
+  font-size: 0.3rem;
   line-height: 1;
   transform: translateY(0.5em);
   font-weight: bold;
 }
 
 .donut-data {
-  font-size: 0.12em;
+  font-size: 0.1rem;
   text-align: center;
   text-anchor: middle;
 }
