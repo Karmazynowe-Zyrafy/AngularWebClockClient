@@ -1,8 +1,8 @@
-import {Injectable} from '@angular/core';
-import {HttpClient, HttpResponse} from '@angular/common/http';
-import {Observable} from 'rxjs';
-import {BalanceDto} from '../balanceDto';
-import {ClockInOutDto} from '../clockInOutDto';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { BalanceDto } from '../balanceDto';
+import { ClockInOutDto } from '../clockInOutDto';
 
 @Injectable({
   providedIn: 'root',
