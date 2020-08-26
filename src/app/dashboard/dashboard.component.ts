@@ -11,8 +11,8 @@ import { BalanceDto } from '../balanceDto';
 export class DashboardComponent implements OnInit {
   constructor(private apiService: ApiService) {}
 
-  responseStatusClockIn: number = null;
-  responseStatusClockOut: number = null;
+  responseStatusClockIn: number;
+  responseStatusClockOut: number;
   balanceData: BalanceDto;
 
   clockIn(): void {
