@@ -1,15 +1,15 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpResponse } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { BalanceDto } from '../balanceDto';
-import { ClockInOutDto } from '../clockInOutDto';
+import {Injectable} from '@angular/core';
+import {HttpClient, HttpResponse} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {BalanceDto} from '../balanceDto';
+import {ClockInOutDto} from '../clockInOutDto';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ApiService {
   id = 6;
-  baseUrl = 'https://localhost:44385/api';
+  baseUrl = 'https://recordwebclock.azurewebsites.net/api';
   clockInUrl = `${this.baseUrl}/ClockInOut/ClockIn/`;
   clockOutUrl = `${this.baseUrl}/ClockInOut/ClockOut/`;
   balanceUrl = `${this.baseUrl}/ClockInOut/Balance/`;
