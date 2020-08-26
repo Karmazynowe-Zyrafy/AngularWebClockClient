@@ -3,22 +3,16 @@ svg {
   width: 12rem;
 }
 
-.donut-percent {
-  font-size: 0.3rem;
+.donut-text-percent {
+  font-size: 0.3125rem;
   line-height: 1;
-  transform: translateY(0.5em);
+  transform: translateY(0.5rem);
   font-weight: bold;
-}
-
-.donut-data {
-  font-size: 0.1rem;
-  text-align: center;
-  text-anchor: middle;
-}
-.donut-text {
-  font-size: 0.75rem;
   fill: #ff6200;
 }
-.donut-text-1 {
-  fill: black;
+
+.donut-text-data {
+  font-size: 0.125rem;
+  text-align: center;
+  text-anchor: middle;
 }
