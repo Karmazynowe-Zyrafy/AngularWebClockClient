@@ -12,14 +12,14 @@
   />
   <circle r="7" cx="10" cy="10" fill="#dedede" />
 
-  <g class="donut-text donut-text-1">
+  <g>
     <text y="50%" transform="translate(0, 2)">
-      <tspan x="50%" text-anchor="middle" class="donut-percent">
+      <tspan x="50%" text-anchor="middle" class="donut-text-percent">
         {{ this.workedPercent | number: "1.0-1" }}%
       </tspan>
     </text>
     <text y="60%" transform="translate(0, 2)">
-      <tspan x="50%" class="donut-data">
+      <tspan x="50%" class="donut-text-data">
         {{ this.balanceData.hoursWorked }}/ {{ this.hoursToWorkInMonth }}h
       </tspan>
     </text>

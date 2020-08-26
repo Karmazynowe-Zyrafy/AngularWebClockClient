@@ -15,7 +15,7 @@ export class DonutChartComponent implements OnInit {
   workedPercent: number;
 
   ngOnInit() {
-    return this.apiService.getBalance().subscribe((data) => {
+    this.apiService.getBalance().subscribe((data) => {
       this.balanceData = data;
       this.workedPercent = this.workedPercent =
         (this.balanceData.hoursWorked * 100) / this.hoursToWorkInMonth;

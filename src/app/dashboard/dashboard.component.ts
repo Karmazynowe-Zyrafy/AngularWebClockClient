@@ -40,8 +40,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('test1' + this.apiService.getBalanceToThisDay());
-    return this.apiService
+    this.apiService
       .getBalanceToThisDay()
       .subscribe((data) => (this.balanceData = data));
   }
