@@ -1,7 +1,3 @@
-.board {
-  margin-top: 7rem;
-}
-
 .flex-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));

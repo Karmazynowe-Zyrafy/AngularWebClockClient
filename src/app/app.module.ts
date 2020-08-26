@@ -6,6 +6,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DonutChartComponent } from './donut-chart/donut-chart.component';
 import { AppRoutingModule } from './app-routing.module';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
     NavbarComponent,
     DashboardComponent,
     DonutChartComponent,
+    PageNotFoundComponent,
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [],
