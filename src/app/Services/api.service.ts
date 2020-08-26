@@ -9,11 +9,11 @@ import { ClockInOutDto } from '../clockInOutDto';
 })
 export class ApiService {
   id = 6;
-  baseUrl = 'https://localhost:44385/api';
-  clockInUrl = '${this.baseUrl}/ClockInOut/ClockIn/';
-  clockOutUrl = '${this.baseUrl}/ClockInOut/ClockOut/';
-  balanceUrl = '${this.baseUrl}/ClockInOut/Balance/';
-  BalanceToThisDayUrl = '${this.baseUrl}/ClockInOut/BalanceToThisDay/';
+  baseUrl = 'https://recordwebclock.azurewebsites.net/api';
+  clockInUrl = `${this.baseUrl}/ClockInOut/ClockIn/`;
+  clockOutUrl = `${this.baseUrl}/ClockInOut/ClockOut/`;
+  balanceUrl = `${this.baseUrl}/ClockInOut/Balance/`;
+  BalanceToThisDayUrl = `${this.baseUrl}/ClockInOut/BalanceToThisDay/`;
   constructor(private http: HttpClient) {}
 
   public postClockIn(): Observable<HttpResponse<Response>> {
