@@ -15,11 +15,13 @@
   <g class="donut-text donut-text-1">
     <text y="50%" transform="translate(0, 2)">
       <tspan x="50%" text-anchor="middle" class="donut-percent">
-        {{ this.workedPercent }}%
+        {{ this.workedPercent | number: "1.0-1" }}%
       </tspan>
     </text>
     <text y="60%" transform="translate(0, 2)">
-      <tspan x="50%" class="donut-data">{{ this.workedPercent }}h</tspan>
+      <tspan x="50%" class="donut-data">
+        {{ this.balanceData.hoursWorked }}/ {{ this.hoursToWorkInMonth }}h
+      </tspan>
     </text>
   </g>
 </svg>
