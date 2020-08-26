@@ -54,17 +54,6 @@ i {
   margin: 0;
 }
 
-.navbar-item:hover {
-  width: 15rem;
-  display: flex;
-  flex-direction: column;
-  transition: width 250ms ease;
-}
-
-#navbar-item:hover #link-text {
-  display: unset;
-}
-
 .navbar-item:last-child {
   margin-left: auto;
 }
@@ -94,4 +83,21 @@ i {
 .material-icons {
   margin: 0;
   font-size: 70px;
+}
+
+@media only screen and (min-width: 576px) {
+}
+@media only screen and (min-width: 768px) {
+}
+@media only screen and (min-width: 992px) {
+  .navbar-item:hover {
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+    transition: width 250ms ease;
+  }
+
+  #navbar-item:hover #link-text {
+    display: unset;
+  }
 }
