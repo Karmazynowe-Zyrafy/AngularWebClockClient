@@ -1,0 +1,24 @@
+svg {
+  height: 12rem;
+  width: 12rem;
+}
+
+.donut-percent {
+  font-size: 0.3rem;
+  line-height: 1;
+  transform: translateY(0.5em);
+  font-weight: bold;
+}
+
+.donut-data {
+  font-size: 0.1rem;
+  text-align: center;
+  text-anchor: middle;
+}
+.donut-text {
+  font-size: 0.75rem;
+  fill: #ff6200;
+}
+.donut-text-1 {
+  fill: black;
+}

@@ -10,7 +10,7 @@ import { ClockInOutHistoryComponent } from './clock-in-out-history/clock-in-out-
 import { InOutTransformPipe } from './in-out-transform.pipe';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, DashboardComponent, ClockInOutHistoryComponent, InOutTransformPipe],
+  declarations: [AppComponent, NavbarComponent, DashboardComponent, ClockInOutHistoryComponent, InOutTransformPipe,DonutChartComponent],
   imports: [BrowserModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

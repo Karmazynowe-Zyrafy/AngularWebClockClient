@@ -8,7 +8,7 @@ import {ClockInOutDto} from '../clockInOutDto';
   providedIn: 'root',
 })
 export class ApiService {
-  id = 6;
+  id = 1;
   baseUrl = 'https://recordwebclock.azurewebsites.net/api';
   clockInUrl = `${this.baseUrl}/ClockInOut/ClockIn/`;
   clockOutUrl = `${this.baseUrl}/ClockInOut/ClockOut/`;
@@ -28,8 +28,10 @@ export class ApiService {
     });
   }
   getBalance(): Observable<BalanceDto> {
-    // return this.http.get<BalanceDto>(this.balanceUrl + this.id);
-    return this.http.get<BalanceDto>(this.BalanceToThisDayUrl + 1);
+    return this.http.get<BalanceDto>(this.balanceUrl + this.id);
+  }
+  getBalanceToThisDay(): Observable<BalanceDto> {
+    return this.http.get<BalanceDto>(this.BalanceToThisDayUrl + this.id);
   }
   getClockInOutHistory(): Observable<ClockInOutDto[]> {
     return this.http.get<ClockInOutDto[]>(this.clockInOutHistory + 1);
