@@ -12,8 +12,7 @@ export class ClockInOutHistoryComponent implements OnInit {
   clockInOutData: ClockInOutDto[];
 
   ngOnInit() {
-    console.log('test1' + this.apiService.getClockInOutHistory());
-    return this.apiService
+    this.apiService
       .getClockInOutHistory()
       .subscribe((data) => (this.clockInOutData = data));
   }
