@@ -4,7 +4,6 @@
   grid-auto-rows: 15rem;
   grid-gap: 1rem;
   margin: 1rem;
-
 }
 
 .balance {
@@ -47,4 +46,28 @@
 
 .material-icons {
   font-size: 5rem;
+}
+@media (min-width: 320px) {
+  .flex-container {
+    font-size: 0.825rem;
+  }
+  .material-icons {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 768px) {
+  .flex-container {
+    font-size: 1.25rem;
+  }
+  .material-icons {
+    font-size: 4rem;
+  }
+}
+@media (min-width: 992px) {
+  .flex-container {
+    font-size: 1.5rem;
+  }
+  .material-icons {
+    font-size: 5rem;
+  }
 }
