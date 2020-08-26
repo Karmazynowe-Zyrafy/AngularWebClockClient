@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: space-around;
   background-color: #dedede;
-  border-radius: 100rem;
+  border-radius: 5rem;
 }
 li {
   background-color: #b3b1af;
@@ -27,5 +27,5 @@ li {
 ul {
   margin-left: auto;
   margin-right: auto;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
