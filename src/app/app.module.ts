@@ -10,7 +10,7 @@ import { ClockInOutHistoryComponent } from './clock-in-out-history/clock-in-out-
 import { InOutTransformPipe } from './in-out-transform.pipe';
 import { DonutChartComponent } from './donut-chart/donut-chart.component';
 import { AppRoutingModule } from './app-routing.module';
-import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
