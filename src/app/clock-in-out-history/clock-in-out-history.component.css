@@ -17,14 +17,15 @@
 li {
   background-color: #b3b1af;
   font-size: 1.5rem;
-  margin: 0.9rem;
+  margin: 0.8125rem;
   list-style: none;
+  letter-spacing: 0.5rem;
 }
 .odd-li {
   background-color: aliceblue;
 }
 ul {
-  width: 70%;
-  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
   overflow-y: scroll;
 }
