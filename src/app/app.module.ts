@@ -11,6 +11,7 @@ import { InOutTransformPipe } from './in-out-transform.pipe';
 import { DonutChartComponent } from './donut-chart/donut-chart.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { MakePositivePipe } from './make-positive.pipe';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     InOutTransformPipe,
     DonutChartComponent,
     PageNotFoundComponent,
+    MakePositivePipe,
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [],
