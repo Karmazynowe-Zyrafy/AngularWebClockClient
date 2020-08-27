@@ -15,7 +15,7 @@
 }
 li {
   background-color: #b3b1af;
-  font-size: 1.5rem;
+  font-size: 0.825rem;
   margin: 0.8125rem;
   list-style: none;
   letter-spacing: 0.5rem;
@@ -36,11 +36,11 @@ ul {
 }
 @media (min-width: 768px) {
   li {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
 }
 @media (min-width: 992px) {
   li {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 }
