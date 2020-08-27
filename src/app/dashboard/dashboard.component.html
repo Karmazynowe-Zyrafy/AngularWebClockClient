@@ -36,7 +36,7 @@
     </p>
 
     <p *ngIf="responseStatusClockIn === 200">
-      Udało się pomyślnie zarejestrować wejście do pracy
+      {{ clockInInformation }}
     </p>
   </div>
 
@@ -55,7 +55,7 @@
     </p>
 
     <p *ngIf="responseStatusClockOut === 200">
-      Udało się pomyślnie zarejestrować wyjście z pracy
+      {{ clockOutInformation }}
     </p>
   </div>
 </div>
