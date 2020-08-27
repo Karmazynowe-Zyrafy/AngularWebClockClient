@@ -4,17 +4,20 @@
     href="https://fonts.googleapis.com/icon?family=Material+Icons"
   />
 </head>
-
 <div class="flex-container">
   <div class="balance">
     <div>
       <app-donut-chart></app-donut-chart>
     </div>
     <div>
-      <p>Godziny Przepracowane: {{ balanceData.hoursWorked }}</p>
-      <p>Minuty Przepracowane:{{ balanceData.minutesWorked }}</p>
-      <p>Godziny Do Przepracowania:{{ balanceData.hoursLeft }}</p>
-      <p>Minuty Do Przepracowania:{{ balanceData.minutesLeft }}</p>
+      <h3>Aktualny bilans</h3>
+      <h4 class="balance-on-plus" *ngIf="balanceData.hoursLeft < 0">
+        + {{ balanceData.hoursLeft | makePositive }}h
+        {{ balanceData.minutesLeft | makePositive }}min
+      </h4>
+      <h4 class="balance-on-minus" *ngIf="balanceData.hoursLeft > 0">
+        - {{ balanceData.hoursLeft }}h {{ balanceData.minutesLeft }}min
+      </h4>
     </div>
   </div>
 </div>

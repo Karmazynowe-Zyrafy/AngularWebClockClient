@@ -13,6 +13,7 @@
   justify-content: space-around;
   background-color: #dedede;
   border-radius: 1rem;
+  text-align: center;
 }
 
 .start-registration {
@@ -47,4 +48,12 @@
 
 .material-icons {
   font-size: 5rem;
+}
+
+.balance-on-minus {
+  color: red;
+}
+
+.balance-on-plus {
+  color: green;
 }
