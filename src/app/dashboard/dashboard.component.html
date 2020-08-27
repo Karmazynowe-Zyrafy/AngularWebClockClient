@@ -10,14 +10,17 @@
       <app-donut-chart></app-donut-chart>
     </div>
     <div>
-      <h3>Aktualny bilans</h3>
-      <h4 class="balance-on-plus" *ngIf="balanceData.hoursLeft < 0">
+      {{ this.dateClockIn }}
+    </div>
+    <div>
+      <h2>Aktualny bilans</h2>
+      <h3 class="balance-on-plus" *ngIf="balanceData.hoursLeft < 0">
         + {{ balanceData.hoursLeft | makePositive }}h
         {{ balanceData.minutesLeft | makePositive }}min
-      </h4>
-      <h4 class="balance-on-minus" *ngIf="balanceData.hoursLeft > 0">
+      </h3>
+      <h3 class="balance-on-minus" *ngIf="balanceData.hoursLeft > 0">
         - {{ balanceData.hoursLeft }}h {{ balanceData.minutesLeft }}min
-      </h4>
+      </h3>
     </div>
   </div>
 </div>
