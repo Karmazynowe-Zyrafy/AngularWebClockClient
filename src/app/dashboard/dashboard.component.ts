@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../Services/api.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { BalanceDto } from '../balanceDto';
-import { timer } from 'rxjs';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-dashboard',
@@ -17,6 +17,8 @@ export class DashboardComponent implements OnInit {
   balanceData: BalanceDto;
   clockInDateFromApi;
   clockOutDateFromApi;
+  timer: string;
+  setIntervalTimer;
 
   clockIn(): void {
     this.apiService.postClockIn().subscribe(
@@ -24,6 +26,7 @@ export class DashboardComponent implements OnInit {
         console.log(response);
         this.responseStatusClockIn = response.status;
         this.clockInDateFromApi = response.body;
+        this.startTimer();
       },
       (error: HttpErrorResponse) => {
         this.responseStatusClockIn = error.status;
@@ -38,6 +41,7 @@ export class DashboardComponent implements OnInit {
         console.log(response);
         this.responseStatusClockOut = response.status;
         this.clockOutDateFromApi = response.body;
+        clearInterval(this.setIntervalTimer);
       },
       (error: HttpErrorResponse) => {
         this.responseStatusClockOut = error.status;
@@ -58,6 +62,10 @@ export class DashboardComponent implements OnInit {
   }
 
   startTimer() {
-    // this.dateClockIn = this.clockInDateFromApi;
+    this.setIntervalTimer = setInterval(() => {
+      var actualDate = moment(new Date());
+      let diff = actualDate.diff(this.clockInDateFromApi);
+      this.timer = moment.utc(diff).format('HH:mm:ss');
+    }, 1000);
   }
 }
