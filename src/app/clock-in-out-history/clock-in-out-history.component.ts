@@ -10,10 +10,14 @@ import { ClockInOutDto } from '../clockInOutDto';
 export class ClockInOutHistoryComponent implements OnInit {
   constructor(private apiService: ApiService) {}
   clockInOutData: ClockInOutDto[];
+  ClockInData: ClockInOutDto[];
 
   ngOnInit() {
     this.apiService
       .getClockInOutHistory()
       .subscribe((data) => (this.clockInOutData = data));
+    this.ClockInData = this.clockInOutData.filter(
+      (ClockIn) => ClockIn.type === 1
+    );
   }
 }

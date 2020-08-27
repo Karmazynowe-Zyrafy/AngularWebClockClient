@@ -2,7 +2,7 @@
   <div class="history-container">
     <ul>
       <li
-        *ngFor="let element of this.clockInOutData; let odd = odd"
+        *ngFor="let element of this.ClockInData; let odd = odd"
         [ngClass]="{ 'odd-li': odd == true }"
       >
         UserId:{{ element.userId }}- Data:{{ element.date | date: "medium" }}-
