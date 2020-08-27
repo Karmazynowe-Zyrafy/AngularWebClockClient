@@ -19,6 +19,7 @@ import { registerLocaleData } from '@angular/common';
 registerLocaleData(localePl);
 
 @NgModule({
+
   declarations: [
     AppComponent,
     NavbarComponent,
@@ -31,6 +32,7 @@ registerLocaleData(localePl);
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [{ provide: LOCALE_ID, useValue: 'pl-PL' }],
+
   bootstrap: [AppComponent],
 })
 export class AppModule {}
