@@ -15,6 +15,8 @@ import { MakePositivePipe } from './make-positive.pipe';
 
 import localePl from '@angular/common/locales/pl';
 import { registerLocaleData } from '@angular/common';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 registerLocaleData(localePl);
 
@@ -30,7 +32,7 @@ registerLocaleData(localePl);
     PageNotFoundComponent,
     MakePositivePipe,
   ],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })],
   providers: [{ provide: LOCALE_ID, useValue: 'pl-PL' }],
 
   bootstrap: [AppComponent],
