@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
@@ -13,6 +13,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MakePositivePipe } from './make-positive.pipe';
 
+import localePl from '@angular/common/locales/pl';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(localePl);
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +30,7 @@ import { MakePositivePipe } from './make-positive.pipe';
     MakePositivePipe,
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule],
-  providers: [],
+  providers: [{ provide: LOCALE_ID, useValue: 'pl-PL' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
