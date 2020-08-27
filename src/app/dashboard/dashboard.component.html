@@ -40,7 +40,7 @@
     </p>
 
     <p *ngIf="responseStatusClockIn === 200">
-      Udało się pomyślnie zarejestrować wejście do pracy
+      Zarejestrowano wejście o {{ clockInDateFromApi | date: "shortTime" }}
     </p>
   </div>
 
@@ -59,7 +59,7 @@
     </p>
 
     <p *ngIf="responseStatusClockOut === 200">
-      Udało się pomyślnie zarejestrować wyjście z pracy
+      Zarejestrowano wyjście o {{ clockOutDateFromApi | date: "shortTime" }}
     </p>
   </div>
 </div>
