@@ -15,8 +15,8 @@ export class DashboardComponent implements OnInit {
   responseStatusClockIn: number;
   responseStatusClockOut: number;
   balanceData: BalanceDto;
-  dateClockIn: Date;
   clockInDateFromApi;
+  clockOutDateFromApi;
 
   clockIn(): void {
     this.apiService.postClockIn().subscribe(
@@ -29,7 +29,7 @@ export class DashboardComponent implements OnInit {
         this.responseStatusClockIn = error.status;
       }
     );
-    this.startTimer();
+    this.clearAfterTime();
   }
 
   clockOut(): void {
@@ -37,13 +37,20 @@ export class DashboardComponent implements OnInit {
       (response) => {
         console.log(response);
         this.responseStatusClockOut = response.status;
+        this.clockOutDateFromApi = response.body;
       },
       (error: HttpErrorResponse) => {
         this.responseStatusClockOut = error.status;
       }
     );
+    this.clearAfterTime();
   }
-
+  clearAfterTime(): void {
+    setTimeout(() => {
+      this.responseStatusClockIn = undefined;
+      this.responseStatusClockOut = undefined;
+    }, 3000);
+  }
   ngOnInit() {
     this.apiService
       .getBalanceToThisDay()
@@ -51,6 +58,6 @@ export class DashboardComponent implements OnInit {
   }
 
   startTimer() {
-    this.dateClockIn = this.clockInDateFromApi;
+    // this.dateClockIn = this.clockInDateFromApi;
   }
 }
