@@ -54,17 +54,6 @@ i {
   margin: 0;
 }
 
-.navbar-item:hover {
-  width: 15rem;
-  display: flex;
-  flex-direction: column;
-  transition: width 250ms ease;
-}
-
-#navbar-item:hover #link-text {
-  display: unset;
-}
-
 .navbar-item:last-child {
   margin-left: auto;
 }
@@ -93,5 +82,34 @@ i {
 
 .material-icons {
   margin: 0;
-  font-size: 70px;
+  font-size: 2.8125rem;
+}
+
+@media only screen and (min-width: 320px) {
+  .material-icons {
+    margin: 0;
+    font-size: 3rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .material-icons {
+    margin: 0;
+    font-size: 4rem;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .material-icons {
+    margin: 0;
+    font-size: 5rem;
+  }
+  .navbar-item:hover {
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+    transition: width 250ms ease;
+  }
+
+  #navbar-item:hover #link-text {
+    display: unset;
+  }
 }

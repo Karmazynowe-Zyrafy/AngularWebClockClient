@@ -1,10 +1,9 @@
 .flex-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(0rem, 1fr));
   grid-auto-rows: 15rem;
   grid-gap: 1rem;
   margin: 1rem;
-  font-family: Lato;
 }
 
 .balance {
@@ -13,6 +12,7 @@
   justify-content: space-around;
   background-color: #dedede;
   border-radius: 1rem;
+  text-align: center;
 }
 
 .start-registration {
@@ -46,5 +46,37 @@
 }
 
 .material-icons {
-  font-size: 5rem;
+  font-size: 2.8125rem;
+}
+@media (min-width: 320px) {
+  .flex-container {
+    font-size: 0.825rem;
+  }
+  .material-icons {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 768px) {
+  .flex-container {
+    font-size: 1rem;
+  }
+  .material-icons {
+    font-size: 4rem;
+  }
+}
+@media (min-width: 992px) {
+  .flex-container {
+    font-size: 1.25rem;
+  }
+  .material-icons {
+    font-size: 5rem;
+  }
+}
+
+.balance-on-minus {
+  color: red;
+}
+
+.balance-on-plus {
+  color: green;
 }
