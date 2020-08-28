@@ -26,7 +26,7 @@ img {
   display: flex;
   align-items: center;
   list-style: none;
-  background: #24c5f4;
+  background: #2496f4;
   height: 6rem;
   text-align: center;
 }
@@ -40,7 +40,7 @@ img {
 }
 
 .navigation a:hover {
-  background: #0747a6;
+  background: #1864a2;
 }
 
 .navbar-item {

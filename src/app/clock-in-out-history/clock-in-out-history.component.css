@@ -10,18 +10,17 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  background-color: #dedede;
   border-radius: 5rem;
 }
 li {
-  background-color: #b3b1af;
+  background-color: #def6fd;
   font-size: 0.825rem;
   margin: 0.8125rem;
   list-style: none;
   letter-spacing: 0.5rem;
 }
 .odd-li {
-  background-color: #dee3e0;
+  background-color: #f4fcfe;
 }
 ul {
   padding-inline-start: 0;
