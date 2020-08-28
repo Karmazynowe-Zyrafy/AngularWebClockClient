@@ -20,7 +20,6 @@ export class DashboardComponent implements OnInit {
   clockIn(): void {
     this.apiService.postClockIn().subscribe(
       (response) => {
-        console.log(response);
         this.responseStatusClockIn = response.status;
         this.clockInDateFromApi = response.body;
       },
@@ -34,7 +33,6 @@ export class DashboardComponent implements OnInit {
   clockOut(): void {
     this.apiService.postClockOut().subscribe(
       (response) => {
-        console.log(response);
         this.responseStatusClockOut = response.status;
         this.clockOutDateFromApi = response.body;
       },

@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {ApiService} from '../Services/api.service';
-import {ClockInOutDto} from '../clockInOutDto';
+import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../Services/api.service';
+import { ClockInOutDto } from '../clockInOutDto';
 
 @Component({
   selector: 'app-clock-in-out-history',
