@@ -19,7 +19,6 @@ import {registerLocaleData} from '@angular/common';
 import {ServiceWorkerModule} from '@angular/service-worker';
 import {environment} from '../environments/environment';
 
-import { registerLocaleData } from '@angular/common';
 import { RemoveWhiteSpacePipe } from './remove-white-space.pipe';
 
 registerLocaleData(localePl);
