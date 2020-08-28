@@ -23,12 +23,13 @@
 </div>
 
 <div class="flex-container">
-  <div class="start-registration">
-    <div>Rozpocznij rejetrowanie pracy</div>
-    <button (click)="clockIn()" class="clock-in-button">
-      <i class="material-icons">access_time</i>
-    </button>
-
+  <div class="information">
+    <div class="start-registration">
+      <div>Rozpocznij rejetrowanie pracy</div>
+      <button (click)="clockIn()" class="clock-in-button">
+        <i class="material-icons">access_time</i>
+      </button>
+    </div>
     <p
       *ngIf="
         responseStatusClockIn !== 200 && responseStatusClockIn !== undefined
@@ -42,23 +43,27 @@
       Zarejestrowano wejście o {{ clockInDateFromApi | date: "shortTime" }}
     </p>
   </div>
+  <div class="information">
+    <div class="stop-registration">
+      <div>Zakończ rejetrowanie pracy</div>
+      <button (click)="clockOut()" class="clock-out-button">
+        <i class="material-icons">access_time</i>
+      </button>
+      <div>
+        <p
+          *ngIf="
+            responseStatusClockOut !== 200 &&
+            responseStatusClockOut !== undefined
+          "
+        >
+          Wystąpił błąd Error: {{ responseStatusClockIn }} nie udało się
+          zarejestrować wyjścia z pracy
+        </p>
 
-  <div class="stop-registration">
-    <div>Zakończ rejetrowanie pracy</div>
-    <button (click)="clockOut()" class="clock-out-button">
-      <i class="material-icons">access_time</i>
-    </button>
-    <p
-      *ngIf="
-        responseStatusClockOut !== 200 && responseStatusClockOut !== undefined
-      "
-    >
-      Wystąpił błąd Error: {{ responseStatusClockIn }} nie udało się
-      zarejestrować wyjścia z pracy
-    </p>
-
-    <p *ngIf="responseStatusClockOut === 200">
-      Zarejestrowano wyjście o {{ clockOutDateFromApi | date: "shortTime" }}
-    </p>
+        <p *ngIf="responseStatusClockOut === 200">
+          Zarejestrowano wyjście o {{ clockOutDateFromApi | date: "shortTime" }}
+        </p>
+      </div>
+    </div>
   </div>
 </div>
