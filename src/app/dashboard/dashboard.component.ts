@@ -3,6 +3,8 @@ import { ApiService } from '../Services/api.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { BalanceDto } from '../balanceDto';
 import * as moment from 'moment';
+import { BrowserDynamicTestingModule } from '@angular/platform-browser-dynamic/testing';
+import { TimeDto } from '../timeDto';
 
 @Component({
   selector: 'app-dashboard',
@@ -19,6 +21,7 @@ export class DashboardComponent implements OnInit {
   clockOutDateFromApi;
   timer: string;
   setIntervalTimer;
+  timeFromApi: TimeDto;
 
   clockIn(): void {
     this.apiService.postClockIn().subscribe(
@@ -26,7 +29,7 @@ export class DashboardComponent implements OnInit {
         console.log(response);
         this.responseStatusClockIn = response.status;
         this.clockInDateFromApi = response.body;
-        this.startTimer();
+        this.startTimerIfUserInWork();
       },
       (error: HttpErrorResponse) => {
         this.responseStatusClockIn = error.status;
@@ -59,12 +62,18 @@ export class DashboardComponent implements OnInit {
     this.apiService
       .getBalanceToThisDay()
       .subscribe((data) => (this.balanceData = data));
+    // this.startTimerIfUserInWork();
   }
 
-  startTimer() {
+  startTimerIfUserInWork() {
+    this.apiService
+      .getLastClockInTime()
+      .subscribe((data) => (this.timeFromApi = data));
+    var apiTime = moment(this.timeFromApi.myTime);
+
     this.setIntervalTimer = setInterval(() => {
       var actualDate = moment(new Date());
-      let diff = actualDate.diff(this.clockInDateFromApi);
+      let diff = actualDate.diff(apiTime);
       this.timer = moment.utc(diff).format('HH:mm:ss');
     }, 1000);
   }
