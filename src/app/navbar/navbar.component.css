@@ -15,7 +15,7 @@ img {
   width: 100vw;
   position: fixed;
   flex-direction: row;
-  background-color: #315f42;
+  background-color: #24c5f4;
   justify-content: flex-start;
 }
 
@@ -26,7 +26,7 @@ img {
   display: flex;
   align-items: center;
   list-style: none;
-  background: #315f42;
+  background: #24c5f4;
   height: 6rem;
   text-align: center;
 }
@@ -40,7 +40,7 @@ img {
 }
 
 .navigation a:hover {
-  background: #5f314e;
+  background: #0747a6;
 }
 
 .navbar-item {
