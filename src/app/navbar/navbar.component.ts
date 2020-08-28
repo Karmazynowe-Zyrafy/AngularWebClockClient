@@ -14,19 +14,14 @@ export class NavbarComponent {
     this.logo = 'assets/imags/rekordlogo.png';
     this.navBarArray = [
       {
-        link: '#',
+        link: '/dashboard',
         icon: 'home',
         text: 'Strona Główna',
       },
       {
-        link: '#',
+        link: '/history',
         icon: 'calendar_today',
         text: 'Historia',
-      },
-      {
-        link: '#',
-        icon: 'contact_support',
-        text: 'Informacje',
       },
       {
         link: '#',
