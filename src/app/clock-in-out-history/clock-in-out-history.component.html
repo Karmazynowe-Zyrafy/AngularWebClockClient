@@ -7,7 +7,7 @@
           *ngFor="let element of this.ClockInData; let odd = odd"
           [ngClass]="{ 'odd-li': odd == true }"
         >
-          Data: {{ element.date | date: "mediumDate" | removeWhiteSpace }}
+          {{ element.date | date: "dd MMMM yyyy" | removeWhiteSpace }}
           {{ element.date | date: "mediumTime" }}
         </li>
       </ul>
@@ -19,7 +19,7 @@
           *ngFor="let element of this.ClockOutData; let odd = odd"
           [ngClass]="{ 'odd-li': odd == true }"
         >
-          Data: {{ element.date | date: "mediumDate" | removeWhiteSpace }}
+          {{ element.date | date: "dd MMMM yyyy" | removeWhiteSpace }}
           {{ element.date | date: "mediumTime" }}
         </li>
       </ul>

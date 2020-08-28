@@ -29,17 +29,13 @@
   overflow-y: auto;
 }
 li {
-
   background-color: #def6fd;
-
   font-size: 0.825rem;
   margin: 0.8125rem;
   list-style: none;
 }
 .odd-li {
-
   background-color: #f4fcfe;
-
 }
 ul {
   padding-inline-start: 0;
