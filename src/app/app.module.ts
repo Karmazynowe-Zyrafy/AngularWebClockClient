@@ -15,6 +15,7 @@ import { MakePositivePipe } from './make-positive.pipe';
 
 import localePl from '@angular/common/locales/pl';
 import { registerLocaleData } from '@angular/common';
+import { RemoveWhiteSpacePipe } from './remove-white-space.pipe';
 
 registerLocaleData(localePl);
 
@@ -29,6 +30,7 @@ registerLocaleData(localePl);
     DonutChartComponent,
     PageNotFoundComponent,
     MakePositivePipe,
+    RemoveWhiteSpacePipe,
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [{ provide: LOCALE_ID, useValue: 'pl-PL' }],
