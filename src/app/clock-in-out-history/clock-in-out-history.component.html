@@ -1,28 +1,21 @@
 <div class="flex-container">
   <div class="history-container">
-    <div class="history">
-      <ul>
-        <li
-          *ngFor="let element of this.ClockInData; let odd = odd"
-          [ngClass]="{ 'odd-li': odd == true }"
-        >
-          UserId:{{ element.userId }}- Data:{{ element.date | date: "medium" }}-
-          Typ:
-          {{ element.type | inOutTransform }}
-        </li>
-      </ul>
-    </div>
-    <div class="history">
-      <ul>
-        <li
-          *ngFor="let element of this.ClockOutData; let odd = odd"
-          [ngClass]="{ 'odd-li': odd == true }"
-        >
-          UserId:{{ element.userId }}- Data:{{ element.date | date: "medium" }}-
-          Typ:
-          {{ element.type | inOutTransform }}
-        </li>
-      </ul>
-    </div>
+    <ul>
+      <li
+        *ngFor="let element of this.ClockInData; let odd = odd"
+        [ngClass]="{ 'odd-li': odd == true }"
+      >
+        Data:{{ element.date | date: "medium" }}
+      </li>
+    </ul>
+
+    <ul>
+      <li
+        *ngFor="let element of this.ClockOutData; let odd = odd"
+        [ngClass]="{ 'odd-li': odd == true }"
+      >
+        Data:{{ element.date | date: "medium" }}
+      </li>
+    </ul>
   </div>
 </div>
