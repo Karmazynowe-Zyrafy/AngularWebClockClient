@@ -13,6 +13,7 @@ export class ApiService {
   clockInUrl = `${this.baseUrl}/ClockInOut/ClockIn/`;
   clockOutUrl = `${this.baseUrl}/ClockInOut/ClockOut/`;
   balanceUrl = `${this.baseUrl}/ClockInOut/Balance/`;
+  workStatusUrl = `${this.baseUrl}/ClockInOut/WorkStatus/`;
   BalanceToThisDayUrl = `${this.baseUrl}/ClockInOut/BalanceToThisDay/`;
   clockInOutHistory = `${this.baseUrl}/ClockInOut/History/`;
   constructor(private http: HttpClient) {}
@@ -35,5 +36,8 @@ export class ApiService {
   }
   getClockInOutHistory(): Observable<ClockInOutDto[]> {
     return this.http.get<ClockInOutDto[]>(this.clockInOutHistory + 1);
+  }
+  getWorkStatus(): Observable<number> {
+    return this.http.get<number>(this.workStatusUrl + 1);
   }
 }

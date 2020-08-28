@@ -5,6 +5,12 @@
   grid-gap: 1rem;
   margin: 1rem;
 }
+#in {
+  color: green;
+}
+#out {
+  color: #ff6200;
+}
 
 .balance {
   display: flex;

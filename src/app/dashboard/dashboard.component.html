@@ -10,6 +10,10 @@
       <app-donut-chart></app-donut-chart>
     </div>
     <div>
+      <p id="in" *ngIf="workStatus === 1">System Rejestruje prace</p>
+      <p id="out" *ngIf="workStatus === 0">System Nie Rejestruje pracy</p>
+    </div>
+    <div>
       <h3>Aktualny bilans</h3>
       <h4 class="balance-on-plus" *ngIf="balanceData?.hoursLeft < 0">
         + {{ balanceData.hoursLeft | makePositive }}h
