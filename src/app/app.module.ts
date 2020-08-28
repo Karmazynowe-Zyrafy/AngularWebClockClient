@@ -14,9 +14,13 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {MakePositivePipe} from './make-positive.pipe';
 
 import localePl from '@angular/common/locales/pl';
+
 import {registerLocaleData} from '@angular/common';
 import {ServiceWorkerModule} from '@angular/service-worker';
 import {environment} from '../environments/environment';
+
+import { registerLocaleData } from '@angular/common';
+import { RemoveWhiteSpacePipe } from './remove-white-space.pipe';
 
 registerLocaleData(localePl);
 
@@ -30,6 +34,7 @@ registerLocaleData(localePl);
     DonutChartComponent,
     PageNotFoundComponent,
     MakePositivePipe,
+    RemoveWhiteSpacePipe,
   ],
   imports: [
     BrowserModule,
