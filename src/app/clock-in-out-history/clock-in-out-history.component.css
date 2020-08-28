@@ -5,28 +5,35 @@
   grid-gap: 1rem;
   margin: 1rem;
 }
+.Inout {
+  font-size: 2rem;
+  display: flex;
+  margin-bottom: auto;
+}
 .history-container {
-  margin: auto;
+  margin-bottom: auto;
+
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: #dedede;
+  background-color: #ffffff;
   border-radius: 5rem;
 }
 .history {
+  margin-bottom: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow-y: auto;
 }
 li {
-  background-color: #b3b1af;
+  background-color: #d9eaff;
   font-size: 0.825rem;
   margin: 0.8125rem;
   list-style: none;
 }
 .odd-li {
-  background-color: #dee3e0;
+  background-color: #f7feff;
 }
 ul {
   padding-inline-start: 0;
@@ -49,6 +56,7 @@ ul {
 @media (min-width: 992px) {
   li {
     font-size: 1.5rem;
+    word-spacing: 7rem;
     letter-spacing: 0.25rem;
   }
 }
