@@ -34,8 +34,7 @@
         responseStatusClockIn !== 200 && responseStatusClockIn !== undefined
       "
     >
-      Wystąpił błąd Error: {{ responseStatusClockIn }} nie udało się
-      zarejestrować wejścia do pracy
+      Nie udało się zarejestrować wejścia do pracy
     </p>
 
     <p *ngIf="responseStatusClockIn === 200">
@@ -44,7 +43,7 @@
   </div>
 
   <div class="stop-registration">
-    <div>Zakończ rejetrowanie pracy</div>
+    <div>Zakończ rejestrowanie pracy</div>
     <button (click)="clockOut()" class="clock-out-button">
       <i class="material-icons">access_time</i>
     </button>
@@ -53,8 +52,7 @@
         responseStatusClockOut !== 200 && responseStatusClockOut !== undefined
       "
     >
-      Wystąpił błąd Error: {{ responseStatusClockIn }} nie udało się
-      zarejestrować wyjścia z pracy
+      Nie udało się zarejestrować wyjścia z pracy
     </p>
 
     <p *ngIf="responseStatusClockOut === 200">
