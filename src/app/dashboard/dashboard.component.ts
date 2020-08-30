@@ -77,12 +77,15 @@ export class DashboardComponent implements OnInit {
       if (this.clockInTimeFromApi == undefined) {
         return;
       }
-
+      this.countTimeDiff();
       this.setIntervalTimer = setInterval(() => {
-        var actualDate = moment(Date.now()).hour(-6);
-        let diff = actualDate.diff(this.clockInTimeFromApi);
-        this.timer = moment.utc(diff).format('HH:mm:ss');
+        this.countTimeDiff();
       }, 1000);
     });
+  }
+  countTimeDiff(): void {
+    var actualDate = moment(new Date()).hour(-6);
+    let diff = actualDate.diff(this.clockInTimeFromApi);
+    this.timer = moment(diff).format('HH:mm:ss');
   }
 }
