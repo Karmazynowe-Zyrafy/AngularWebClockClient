@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../Services/api.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { BalanceDto } from '../balanceDto';
-
+import * as moment from 'moment';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -17,7 +17,9 @@ export class DashboardComponent implements OnInit {
   clockInDateFromApi;
   clockOutDateFromApi;
   workStatus: number;
-  clockInTimeDto;
+  clockInTimeFromApi;
+  setIntervalTimer;
+  timer;
   clockIn(): void {
     this.apiService.postClockIn().subscribe(
       (response) => {
@@ -26,6 +28,7 @@ export class DashboardComponent implements OnInit {
         this.apiService
           .getWorkStatus()
           .subscribe((data) => (this.workStatus = data));
+        this.startTimerIfUserInWork();
       },
       (error: HttpErrorResponse) => {
         this.responseStatusClockIn = error.status;
@@ -42,6 +45,7 @@ export class DashboardComponent implements OnInit {
         this.apiService
           .getWorkStatus()
           .subscribe((data) => (this.workStatus = data));
+        clearInterval(this.setIntervalTimer);
       },
       (error: HttpErrorResponse) => {
         this.responseStatusClockOut = error.status;
@@ -63,8 +67,22 @@ export class DashboardComponent implements OnInit {
       .getWorkStatus()
       .subscribe((data) => (this.workStatus = data));
 
+    this.startTimerIfUserInWork();
+  }
+  startTimerIfUserInWork(): void {
     this.apiService.getLastClockInTime().subscribe((response) => {
-      this.clockInTimeDto = response.body;
+      this.clockInTimeFromApi = response.body;
+      console.log(this.clockInTimeFromApi);
+
+      if (this.clockInTimeFromApi == undefined) {
+        return;
+      }
+
+      this.setIntervalTimer = setInterval(() => {
+        var actualDate = moment(Date.now()).hour(-6);
+        let diff = actualDate.diff(this.clockInTimeFromApi);
+        this.timer = moment.utc(diff).format('HH:mm:ss');
+      }, 1000);
     });
   }
 }
