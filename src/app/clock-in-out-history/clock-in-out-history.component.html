@@ -8,7 +8,7 @@
           [ngClass]="{ 'odd-li': odd == true }"
         >
           {{ element.date | date: "dd MMMM yyyy" | removeWhiteSpace }}
-          {{ element.date | date: "mediumTime" }}
+          {{ element.date + "Z" | date: "mediumTime" }}
         </li>
       </ul>
     </div>
@@ -20,7 +20,7 @@
           [ngClass]="{ 'odd-li': odd == true }"
         >
           {{ element.date | date: "dd MMMM yyyy" | removeWhiteSpace }}
-          {{ element.date | date: "mediumTime" }}
+          {{ element.date + "Z" | date: "mediumTime" }}
         </li>
       </ul>
     </div>
