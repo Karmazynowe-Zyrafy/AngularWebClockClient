@@ -10,13 +10,13 @@
       <app-donut-chart></app-donut-chart>
     </div>
     <div>
-      <p id="in" *ngIf="workStatus === 1">System Rejestruje prace</p>
-      <p id="out" *ngIf="workStatus === 0">System Nie Rejestruje pracy</p>
+      <h4 id="in" *ngIf="workStatus === 1">System rejestruje prace</h4>
+      <h4 id="out" *ngIf="workStatus === 0">System nie rejestruje pracy</h4>
     </div>
     <div>
-      <h3>atualny bilans</h3>
+      <h3>Aktualny bilans</h3>
       <h4 class="balance-on-plus" *ngIf="balanceData?.hoursLeft < 0">
-        + {{ balanceData.hoursLeft  | makePositive }}h
+        + {{ balanceData.hoursLeft | makePositive }}h
         {{ balanceData.minutesLeft | makePositive }}min
       </h4>
       <h4 class="balance-on-minus" *ngIf="balanceData?.hoursLeft > 0">
@@ -29,7 +29,9 @@
 <div class="flex-container">
   <div class="information">
     <div class="start-registration">
-      <div>Rozpocznij rejetrowanie pracy</div>
+      <div>
+        <h4>Rozpocznij rejestrowanie pracy</h4>
+      </div>
       <button (click)="clockIn()" class="clock-in-button">
         <i class="material-icons">access_time</i>
       </button>
@@ -48,7 +50,11 @@
   </div>
   <div class="information">
     <div class="stop-registration">
-      <div>Zakończ rejetrowanie pracy</div>
+      <div>
+        <h4>
+          Zakończ rejestrowanie pracy
+        </h4>
+      </div>
       <button (click)="clockOut()" class="clock-out-button">
         <i class="material-icons">access_time</i>
       </button>
