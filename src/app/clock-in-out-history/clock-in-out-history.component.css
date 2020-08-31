@@ -12,13 +12,10 @@
 }
 .history-container {
   margin-bottom: auto;
-
   display: flex;
   align-items: center;
-  justify-content: space-around;
-
+  justify-content: center;
   background-color: #ffffff;
-
   border-radius: 5rem;
 }
 .history {
@@ -29,17 +26,13 @@
   overflow-y: auto;
 }
 li {
-
   background-color: #def6fd;
-
   font-size: 0.825rem;
   margin: 0.8125rem;
   list-style: none;
 }
 .odd-li {
-
   background-color: #f4fcfe;
-
 }
 ul {
   padding-inline-start: 0;
@@ -61,7 +54,7 @@ ul {
 }
 @media (min-width: 992px) {
   li {
-    font-size: 1.5rem;
+    font-size: 1.3125rem;
     word-spacing: 7rem;
     letter-spacing: 0.25rem;
   }

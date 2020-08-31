@@ -30,7 +30,7 @@ export class DashboardComponent implements OnInit {
         this.responseStatusClockIn = error.status;
       }
     );
-    this.clearAfterTime();
+    this.clearClockInAfterTime();
   }
 
   clockOut(): void {
@@ -46,14 +46,21 @@ export class DashboardComponent implements OnInit {
         this.responseStatusClockOut = error.status;
       }
     );
-    this.clearAfterTime();
+    this.clearClockOutAfterTime();
   }
-  clearAfterTime(): void {
+
+  clearClockInAfterTime(): void {
     setTimeout(() => {
       this.responseStatusClockIn = undefined;
+    }, 3000);
+  }
+
+  clearClockOutAfterTime(): void {
+    setTimeout(() => {
       this.responseStatusClockOut = undefined;
     }, 3000);
   }
+
   ngOnInit() {
     this.apiService
       .getBalanceToThisDay()
