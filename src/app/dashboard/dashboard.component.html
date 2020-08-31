@@ -10,6 +10,10 @@
       <app-donut-chart></app-donut-chart>
     </div>
     <div>
+      <p id="in" *ngIf="workStatus === 1">System Rejestruje prace</p>
+      <p id="out" *ngIf="workStatus === 0">System Nie Rejestruje pracy</p>
+    </div>
+    <div>
       <h3>Aktualny bilans</h3>
       <h4 class="balance-on-plus" *ngIf="balanceData?.hoursLeft < 0">
         + {{ balanceData.hoursLeft | makePositive }}h
@@ -23,6 +27,7 @@
 </div>
 
 <div class="flex-container">
+
   <div class="start-registration">
     <div>
       <h4>
@@ -45,6 +50,22 @@
       Zarejestrowano wejście o {{ clockInDateFromApi | date: "shortTime" }}
     </p>
   </div>
+  <div class="information">
+    <div class="stop-registration">
+      <div>Zakończ rejetrowanie pracy</div>
+      <button (click)="clockOut()" class="clock-out-button">
+        <i class="material-icons">access_time</i>
+      </button>
+      <div>
+        <p
+          *ngIf="
+            responseStatusClockOut !== 200 &&
+            responseStatusClockOut !== undefined
+          "
+        >
+          Wystąpił błąd Error: {{ responseStatusClockIn }} nie udało się
+          zarejestrować wyjścia z pracy
+        </p>
 
   <div class="stop-registration">
     <div>
@@ -66,5 +87,6 @@
     <p *ngIf="responseStatusClockOut === 200">
       Zarejestrowano wyjście o {{ clockOutDateFromApi | date: "shortTime" }}
     </p>
+
   </div>
 </div>
