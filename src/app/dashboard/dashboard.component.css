@@ -5,6 +5,12 @@
   grid-gap: 1rem;
   margin: 1rem;
 }
+#in {
+  color: green;
+}
+#out {
+  color: #ff6200;
+}
 
 .balance {
   display: flex;
@@ -12,6 +18,13 @@
   justify-content: space-around;
   background-color: #ffffff;
   border-radius: 1rem;
+  text-align: center;
+}
+.informationP {
+  display: flex;
+  text-align: center;
+}
+p {
   text-align: center;
 }
 
@@ -23,7 +36,6 @@
   background-color: #ffffff;
   border-radius: 1rem;
 }
-
 .stop-registration {
   display: flex;
   flex-direction: column;
@@ -31,6 +43,9 @@
   justify-content: space-around;
   background-color: #ffffff;
   border-radius: 1rem;
+}
+button {
+  margin-top: 0.5rem;
 }
 
 .clock-in-button {

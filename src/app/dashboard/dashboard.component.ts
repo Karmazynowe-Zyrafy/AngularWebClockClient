@@ -16,12 +16,15 @@ export class DashboardComponent implements OnInit {
   balanceData: BalanceDto;
   clockInDateFromApi;
   clockOutDateFromApi;
-
+  workStatus: number;
   clockIn(): void {
     this.apiService.postClockIn().subscribe(
       (response) => {
         this.responseStatusClockIn = response.status;
         this.clockInDateFromApi = response.body;
+        this.apiService
+          .getWorkStatus()
+          .subscribe((data) => (this.workStatus = data));
       },
       (error: HttpErrorResponse) => {
         this.responseStatusClockIn = error.status;
@@ -35,6 +38,9 @@ export class DashboardComponent implements OnInit {
       (response) => {
         this.responseStatusClockOut = response.status;
         this.clockOutDateFromApi = response.body;
+        this.apiService
+          .getWorkStatus()
+          .subscribe((data) => (this.workStatus = data));
       },
       (error: HttpErrorResponse) => {
         this.responseStatusClockOut = error.status;
@@ -59,5 +65,8 @@ export class DashboardComponent implements OnInit {
     this.apiService
       .getBalanceToThisDay()
       .subscribe((data) => (this.balanceData = data));
+    this.apiService
+      .getWorkStatus()
+      .subscribe((data) => (this.workStatus = data));
   }
 }
