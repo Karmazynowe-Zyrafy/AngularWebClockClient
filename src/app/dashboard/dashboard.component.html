@@ -14,9 +14,9 @@
       <p id="out" *ngIf="workStatus === 0">System Nie Rejestruje pracy</p>
     </div>
     <div>
-      <h3>Aktualny bilans</h3>
+      <h3>atualny bilans</h3>
       <h4 class="balance-on-plus" *ngIf="balanceData?.hoursLeft < 0">
-        + {{ balanceData.hoursLeft | makePositive }}h
+        + {{ balanceData.hoursLeft  | makePositive }}h
         {{ balanceData.minutesLeft | makePositive }}min
       </h4>
       <h4 class="balance-on-minus" *ngIf="balanceData?.hoursLeft > 0">
@@ -27,17 +27,13 @@
 </div>
 
 <div class="flex-container">
-
-  <div class="start-registration">
-    <div>
-      <h4>
-        Rozpocznij rejestrowanie pracy
-      </h4>
+  <div class="information">
+    <div class="start-registration">
+      <div>Rozpocznij rejetrowanie pracy</div>
+      <button (click)="clockIn()" class="clock-in-button">
+        <i class="material-icons">access_time</i>
+      </button>
     </div>
-    <button (click)="clockIn()" class="clock-in-button">
-      <i class="material-icons">access_time</i>
-    </button>
-
     <p
       *ngIf="
         responseStatusClockIn !== 200 && responseStatusClockIn !== undefined
@@ -63,30 +59,13 @@
             responseStatusClockOut !== undefined
           "
         >
-          Wystąpił błąd Error: {{ responseStatusClockIn }} nie udało się
-          zarejestrować wyjścia z pracy
+          Nie udało się zarejestrować wyjścia z pracy
         </p>
 
-  <div class="stop-registration">
-    <div>
-      <h4>
-        Zakończ rejestrowanie pracy
-      </h4>
+        <p *ngIf="responseStatusClockOut === 200">
+          Zarejestrowano wyjście o {{ clockOutDateFromApi | date: "shortTime" }}
+        </p>
+      </div>
     </div>
-    <button (click)="clockOut()" class="clock-out-button">
-      <i class="material-icons">access_time</i>
-    </button>
-    <p
-      *ngIf="
-        responseStatusClockOut !== 200 && responseStatusClockOut !== undefined
-      "
-    >
-      Nie udało się zarejestrować wyjścia z pracy
-    </p>
-
-    <p *ngIf="responseStatusClockOut === 200">
-      Zarejestrowano wyjście o {{ clockOutDateFromApi | date: "shortTime" }}
-    </p>
-
   </div>
 </div>
